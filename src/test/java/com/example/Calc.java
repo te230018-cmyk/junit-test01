@@ -7,12 +7,9 @@ public class Calc {
         return x - y;
     }
 
-    // 割り算
+    // 割り算（0除算のチェックをJava標準の挙動に任せる）
     public int div(int x, int y) {
-        if (y == 0) {
-            throw new IllegalArgumentException("0で割ることはできません");
-        }
-        return x / y;
+        return x / y; 
     }
 
     // 掛け算

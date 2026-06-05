@@ -28,3 +28,12 @@ public class CalcTest {
         assertThat(result).isEqualTo(12);
     }
 }
+@Test
+    void divの異常系テスト_0除算で例外が発生すること() {
+        // 10 / 0 を実行したときに例外が発生することを検証
+        assertThatThrownBy(() -> calc.div(10, 0))
+            // 1. ArithmeticException が発生すること
+            .isInstanceOf(ArithmeticException.class)
+            // 2. エラーメッセージに「by zero」を含んでいること
+            .hasMessageContaining("by zero");
+    }
